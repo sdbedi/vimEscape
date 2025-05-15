@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Exit Vim - Terminal Guide</title>
+    <style>
+        body {
+            background-color: #2E3436;
+            color: #F8F8F2;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .terminal {
+            flex: 1;
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #1E1E1E;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .terminal-header {
+            background: linear-gradient(to bottom, #4D4D4D, #3A3A3A);
+            height: 25px;
+            display: flex;
+            align-items: center;
+            padding: 0 8px;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+        .terminal-button {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        .terminal-close {
+            background-color: #FF5F56;
+        }
+        .terminal-minimize {
+            background-color: #FFBD2E;
+        }
+        .terminal-maximize {
+            background-color: #27C93F;
+        }
+        .terminal-title {
+            color: #CCC;
+            font-size: 12px;
+            margin-left: 4px;
+        }
+        .terminal-content {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+        .prompt {
+            color: #50FA7B;
+            font-weight: bold;
+        }
+        .user {
+            color: #8BE9FD;
+        }
+        .host {
+            color: #BD93F9;
+        }
+        .path {
+            color: #F1FA8C;
+        }
+        .command {
+            color: #FF79C6;
+        }
+        .output {
+            color: #F8F8F2;
+            margin: 5px 0 15px 20px;
+            white-space: pre-wrap;
+        }
+        .key {
+            display: inline-block;
+            padding: 2px 6px;
+            background-color: #383838;
+            border: 1px solid #555;
+            border-radius: 3px;
+            box-shadow: 0 2px 0 #222;
+            color: #FF79C6;
+            margin: 0 2px;
+        }
+        .blinking-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 15px;
+            background-color: #F8F8F2;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 2px;
+        }
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        h1, h2 {
+            color: #FF79C6;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+        h1 {
+            font-size: 1.5em;
+        }
+        h2 {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .highlight {
+            color: #FFB86C;
+            font-weight: bold;
+        }
+        .error {
+            color: #FF5555;
+        }
+        .success {
+            color: #50FA7B;
+        }
+        .warning {
+            color: #F1FA8C;
+        }
+        .divider {
+            color: #6272A4;
+            margin: 10px 0;
+        }
+        a {
+            color: #8BE9FD;
+            text-decoration: none;
+            border-bottom: 1px dashed #8BE9FD;
+        }
+        a:hover {
+            color: #FF79C6;
+            border-bottom: 1px solid #FF79C6;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-button terminal-close"></div>
+            <div class="terminal-button terminal-minimize"></div>
+            <div class="terminal-button terminal-maximize"></div>
+            <div class="terminal-title">user@localhost: vim-escape-guide</div>
+        </div>
+        <div class="terminal-content">
+            <div class="command-line">
+                <span class="prompt"><span class="user">user</span>@<span class="host">localhost</span>:<span class="path">~/vim-guide</span>$</span> <span class="command">cat how-to-exit-vim.txt</span>
+            </div>
+            
+            <div class="output">
+# HOW TO EXIT VIM #
+==========================================
+
+You've entered Vim and now you can't escape. Don't panic.
+This guide will help you break free.
+
+## METHOD 1: STANDARD EXIT ##
+------------------------------------------
+1. Press <span class="key">Esc</span> (to ensure you're in command mode)
+2. Type <span class="key">:</span> (colon)
+3. Type <span class="key">q</span>
+4. Press <span class="key">Enter</span>
+
+FULL SEQUENCE: <span class="key">Esc</span> <span class="key">:</span><span class="key">q</span> <span class="key">Enter</span>
+
+<span class="warning">NOTE: If you've made changes, Vim won't let you quit this way.</span>
+
+
+## METHOD 2: FORCE QUIT (DISCARD CHANGES) ##
+------------------------------------------
+1. Press <span class="key">Esc</span> (to ensure you're in command mode)
+2. Type <span class="key">:</span> (colon)
+3. Type <span class="key">q</span><span class="key">!</span> (the exclamation mark forces it)
+4. Press <span class="key">Enter</span>
+
+FULL SEQUENCE: <span class="key">Esc</span> <span class="key">:</span><span class="key">q</span><span class="key">!</span> <span class="key">Enter</span>
+
+<span class="error">WARNING: This will discard any unsaved changes!</span>
+
+
+## METHOD 3: SAVE AND QUIT ##
+------------------------------------------
+1. Press <span class="key">Esc</span> (to ensure you're in command mode)
+2. Type <span class="key">:</span> (colon)
+3. Type <span class="key">w</span><span class="key">q</span> (write and quit)
+4. Press <span class="key">Enter</span>
+
+FULL SEQUENCE: <span class="key">Esc</span> <span class="key">:</span><span class="key">w</span><span class="key">q</span> <span class="key">Enter</span>
+
+<span class="success">This will save your changes and exit.</span>
+
+
+## METHOD 4: WRITE TO A DIFFERENT FILE AND QUIT ##
+------------------------------------------
+1. Press <span class="key">Esc</span> (to ensure you're in command mode)
+2. Type <span class="key">:</span> (colon)
+3. Type <span class="key">w</span> <span class="key">filename</span> (to save to a specific file)
+4. Press <span class="key">Enter</span>
+5. Type <span class="key">:</span><span class="key">q</span> and press <span class="key">Enter</span> to quit
+
+EXAMPLE: <span class="key">Esc</span> <span class="key">:</span><span class="key">w</span> <span class="key">newfile.txt</span> <span class="key">Enter</span> <span class="key">:</span><span class="key">q</span> <span class="key">Enter</span>
+
+
+## METHOD 5: EMERGENCY EXIT ##
+------------------------------------------
+If all else fails:
+
+1. Press <span class="key">Ctrl</span> + <span class="key">Z</span> to suspend Vim
+2. Type <span class="key">kill -9 %1</span> and press <span class="key">Enter</span>
+
+OR: Simply close your terminal window (losing all changes)
+
+
+## COMMON ERROR MESSAGES ##
+------------------------------------------
+<span class="error">E37: No write since last change</span>
+- You have unsaved changes
+- Use <span class="key">:wq</span> to save and exit
+- Or use <span class="key">:q!</span> to discard changes and exit
+
+<span class="error">E212: Can't open file for writing</span>
+- You don't have permission to write to the file
+- Use <span class="key">:w ~/filename</span> to write somewhere else
+- Or use <span class="key">:q!</span> to exit without saving
+
+
+## VIM MODES EXPLAINED ##
+------------------------------------------
+Vim has multiple modes:
+
+- <span class="highlight">NORMAL MODE</span>: For navigation and commands (default)
+- <span class="highlight">INSERT MODE</span>: For typing text (enter with <span class="key">i</span>, <span class="key">a</span>, etc.)
+- <span class="highlight">COMMAND MODE</span>: For executing commands (enter with <span class="key">:</span>)
+- <span class="highlight">VISUAL MODE</span>: For selecting text (enter with <span class="key">v</span>)
+
+Always press <span class="key">Esc</span> to return to normal mode before trying to quit.
+
+==========================================
+<span class="divider">-- End of File --</span>
+            </div>
+            
+            <div class="command-line">
+                <span class="prompt"><span class="user">user</span>@<span class="host">localhost</span>:<span class="path">~/vim-guide</span>$</span> <span class="command">whoami</span>
+            </div>
+            
+            <div class="output"><a href="https://sheelbedi.com" target="_blank">sheelbedi.com</a></div>
+            
+            <div class="command-line">
+                <span class="prompt"><span class="user">user</span>@<span class="host">localhost</span>:<span class="path">~/vim-guide</span>$</span> <span class="blinking-cursor"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
